@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نوری - نیا طالب علم</title>
+    <title>نوری - نئے طالب علم کا اندراج</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/add_student.css">
@@ -19,14 +19,14 @@
                 <ul>
                     <li><a href="../index.html"><i class="fas fa-tachometer-alt"></i> <span>ڈیش بورڈ</span></a></li>
                     <li class="active"><a href="student_listing.html"><i class="fas fa-user-graduate"></i> <span>طلبہ</span></a></li>
-                    <li><a href="#"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
-                    <li><a href="#"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
-                    <li><a href="#"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
-                    <li><a href="#"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
-                    <li><a href="#"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
-                    <li><a href="#"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
+                    <li><a href="attendance.html"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
+                    <li><a href="fees.html"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
+                    <li><a href="exams.html"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
+                    <li><a href="timetable.html"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
+                    <li><a href="library.html"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
+                    <li><a href="transport.html"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
                 </ul>
             </nav>
         </aside>
@@ -36,132 +36,82 @@
             <!-- Header -->
             <header class="header">
                 <div class="header-title">
-                    <h1>نیا طالب علم شامل کریں</h1>
+                    <h1>نئے طالب علم کا اندراج</h1>
                 </div>
                 <div class="header-user">
-                     <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
+                    <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
                 </div>
             </header>
 
             <!-- Content Area -->
             <section class="content-area">
-                <div class="form-container">
-                    <form class="student-form">
-                        <fieldset>
-                            <legend>بنیادی معلومات</legend>
-                            <div class="form-row">
+                <div class="student-form-container">
+                    <form id="add-student-form">
+                        <div class="form-section">
+                            <h3>ذاتی معلومات</h3>
+                            <div class="form-grid">
                                 <div class="form-group">
-                                    <label for="fullName">پورا نام</label>
-                                    <input type="text" id="fullName" placeholder="مثال: محمد علی">
+                                    <label for="full-name">پورا نام</label>
+                                    <input type="text" id="full-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dob">تاریخ پیدائش</label>
+                                    <input type="date" id="dob" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="gender">جنس</label>
-                                    <select id="gender">
-                                        <option>منتخب کریں</option>
-                                        <option>لڑکا</option>
-                                        <option>لڑکی</option>
+                                    <select id="gender" required>
+                                        <option value="male">لڑکا</option>
+                                        <option value="female">لڑکی</option>
                                     </select>
                                 </div>
-                                 <div class="form-group">
-                                    <label for="dob">تاریخ پیدائش</label>
-                                    <input type="date" id="dob">
-                                </div>
                             </div>
-                            <div class="form-row">
+                        </div>
+
+                        <div class="form-section">
+                            <h3>تعلیمی معلومات</h3>
+                            <div class="form-grid">
                                 <div class="form-group">
-                                    <label for="fatherName">والد کا نام</label>
-                                    <input type="text" id="fatherName" placeholder="مثال: احمد رضا">
-                                </div>
-                                 <div class="form-group">
-                                    <label for="fatherCnic">والد کا شناختی کارڈ</label>
-                                    <input type="text" id="fatherCnic" placeholder="xxxxx-xxxxxxx-x">
-                                </div>
-                                 <div class="form-group">
-                                    <label for="bloodGroup">بلڈ گروپ</label>
-                                     <select id="bloodGroup">
-                                        <option>منتخب کریں</option>
-                                        <option>A+</option>
-                                        <option>A-</option>
-                                        <option>B+</option>
-                                        <option>B-</option>
-                                        <option>AB+</option>
-                                        <option>AB-</option>
-                                        <option>O+</option>
-                                        <option>O-</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </fieldset>
-                    
-                        <fieldset>
-                            <legend>تعلیمی معلومات</legend>
-                            <div class="form-row">
-                                 <div class="form-group">
-                                    <label for="admissionDate">تاریخ داخلہ</label>
-                                    <input type="date" id="admissionDate">
+                                    <label for="roll-no">رول نمبر</label>
+                                    <input type="text" id="roll-no" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="class">کلاس</label>
-                                    <select id="class">
-                                        <option>کلاس منتخب کریں</option>
-                                        <option>کلاس نہم</option>
-                                        <option>کلاس دہم</option>
-                                    </select>
+                                    <input type="text" id="class" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="section">سیکشن</label>
-                                    <select id="section">
-                                        <option>سیکشن منتخب کریں</option>
-                                        <option>A</option>
-                                        <option>B</option>
-                                        <option>C</option>
-                                    </select>
+                                    <label for="admission-date">داخلے کی تاریخ</label>
+                                    <input type="date" id="admission-date" required>
                                 </div>
                             </div>
-                            <div class="form-row">
+                        </div>
+
+                        <div class="form-section">
+                            <h3>رابطے کی معلومات</h3>
+                            <div class="form-grid">
                                 <div class="form-group">
-                                    <label for="rollNo">رول نمبر</label>
-                                    <input type="text" id="rollNo" placeholder="مثال: 101">
+                                    <label for="father-name">والد کا نام</label>
+                                    <input type="text" id="father-name" required>
                                 </div>
-                                 <div class="form-group">
-                                    <label for="registrationNo">رجسٹریشن نمبر</label>
-                                    <input type="text" id="registrationNo" placeholder="خودکار طور پر بنے گا" disabled>
-                                </div>
-                            </div>
-                        </fieldset>
-                    
-                        <fieldset>
-                            <legend>رابطے کی معلومات</legend>
-                            <div class="form-row">
                                 <div class="form-group">
-                                    <label for="mobileNumber">موبائل نمبر</label>
-                                    <input type="text" id="mobileNumber" placeholder="0300-1234567">
+                                    <label for="phone-number">فون نمبر</label>
+                                    <input type="tel" id="phone-number" required>
                                 </div>
                                 <div class="form-group address-group">
                                     <label for="address">پتہ</label>
-                                    <textarea id="address" rows="3" placeholder="یہاں مکمل پتہ درج کریں"></textarea>
+                                    <input type="text" id="address" required>
                                 </div>
                             </div>
-                        </fieldset>
-                        
-                        <fieldset>
-                            <legend>پروفائل تصویر</legend>
-                             <div class="form-group profile-upload">
-                                <label for="profilePic">تصویر اپلوڈ کریں</label>
-                                <input type="file" id="profilePic" accept="image/*">
-                            </div>
-                        </fieldset>
-                    
-                        <div class="form-footer">
-                            <button type="submit" class="btn-submit"><i class="fas fa-check"></i> معلومات محفوظ کریں</button>
-                            <a href="student_listing.html" class="btn-cancel">منسوخ کریں</a>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">طالب علم شامل کریں</button>
                         </div>
                     </form>
                 </div>
             </section>
         </main>
     </div>
-
     <script src="../js/add_student.js"></script>
 </body>
 </html>

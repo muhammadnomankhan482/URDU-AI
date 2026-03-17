@@ -19,14 +19,14 @@
                 <ul>
                     <li><a href="../index.html"><i class="fas fa-tachometer-alt"></i> <span>ڈیش بورڈ</span></a></li>
                     <li class="active"><a href="student_listing.html"><i class="fas fa-user-graduate"></i> <span>طلبہ</span></a></li>
-                    <li><a href="#"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
-                    <li><a href="#"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
-                    <li><a href="#"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
-                    <li><a href="#"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
-                    <li><a href="#"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
-                    <li><a href="#"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
+                    <li><a href="attendance.html"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
+                    <li><a href="fees.html"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
+                    <li><a href="exams.html"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
+                    <li><a href="timetable.html"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
+                    <li><a href="library.html"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
+                    <li><a href="transport.html"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
                 </ul>
             </nav>
         </aside>
@@ -36,134 +36,44 @@
             <!-- Header -->
             <header class="header">
                 <div class="header-title">
-                    <h1>طلبہ کا انتظام</h1>
+                    <h1>طلبہ کی فہرست</h1>
+                </div>
+                <div class="header-actions">
+                    <a href="add_student.html" class="add-student-btn">+ نیا طالب علم</a>
                 </div>
                 <div class="header-user">
-                     <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
+                    <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
                 </div>
             </header>
 
             <!-- Content Area -->
             <section class="content-area">
-                <div class="table-container">
-                    <div class="table-header">
-                        <h3>تمام طلبہ</h3>
-                        <div class="table-actions">
-                             <a href="add_student.html" class="btn-add-student"><i class="fas fa-user-plus"></i> نیا طالب علم</a>
-                             <button class="btn-download"><i class="fas fa-download"></i> رپورٹ ڈائونلوڈ</button>
-                        </div>
+                <div class="student-list-container">
+                    <div class="filters">
+                        <input type="text" id="search-input" placeholder="نام یا رول نمبر سے تلاش کریں">
+                        <select id="class-filter">
+                            <option value="">تمام کلاسیں</option>
+                        </select>
                     </div>
-
-                    <div class="filter-bar">
-                        <div class="search-box">
-                            <input type="text" placeholder="نام، رول نمبر، یا رجسٹریشن سے تلاش کریں...">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div class="filter-options">
-                            <select id="classFilter">
-                                <option value="">تمام کلاسیں</option>
-                                <option>کلاس نہم</option>
-                                <option>کلاس دہم</option>
-                            </select>
-                             <select id="sectionFilter">
-                                <option value="">تمام سیکشن</option>
-                                <option>A</option>
-                                <option>B</option>
-                                <option>C</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <table class="students-table">
+                    <table class="student-table">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>رول نمبر</th>
                                 <th>نام</th>
-                                <th>والد کا نام</th>
                                 <th>کلاس</th>
-                                <th>سیکشن</th>
-                                <th>کیفیت</th>
+                                <th>والد کا نام</th>
+                                <th>فون نمبر</th>
                                 <th>کاروائیاں</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><img src="https://via.placeholder.com/40" alt="student photo" class="student-photo"></td>
-                                <td>101</td>
-                                <td class="student-name">محمد علی</td>
-                                <td>احمد رضا</td>
-                                <td>کلاس دہم</td>
-                                <td>A</td>
-                                <td><span class="status active">فعال</span></td>
-                                <td class="action-buttons">
-                                    <button class="btn-view" title="معلومات دیکھیں"><i class="fas fa-eye"></i></button>
-                                    <button class="btn-edit" title="ترمیم کریں"><i class="fas fa-pencil-alt"></i></button>
-                                    <button class="btn-delete" title="حذف کریں"><i class="fas fa-trash"></i></button>
-                                    <button class="btn-qr" title="کیو آر کوڈ"><i class="fas fa-qrcode"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://via.placeholder.com/40" alt="student photo" class="student-photo"></td>
-                                <td>102</td>
-                                <td class="student-name">فاطمہ خان</td>
-                                <td>عمران خان</td>
-                                <td>کلاس نہم</td>
-                                <td>B</td>
-                                <td><span class="status active">فعال</span></td>
-                                <td class="action-buttons">
-                                    <button class="btn-view"><i class="fas fa-eye"></i></button>
-                                    <button class="btn-edit"><i class="fas fa-pencil-alt"></i></button>
-                                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
-                                    <button class="btn-qr" title="کیو آر کوڈ"><i class="fas fa-qrcode"></i></button>
-                                </td>
-                            </tr>
-                             <tr>
-                                <td><img src="https://via.placeholder.com/40" alt="student photo" class="student-photo"></td>
-                                <td>103</td>
-                                <td class="student-name">بلال حسین</td>
-                                <td>جاوید اقبال</td>
-                                <td>کلاس دہم</td>
-                                <td>A</td>
-                                <td><span class="status inactive">غیر فعال</span></td>
-                                <td class="action-buttons">
-                                    <button class="btn-view"><i class="fas fa-eye"></i></button>
-                                    <button class="btn-edit"><i class="fas fa-pencil-alt"></i></button>
-                                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
-                                    <button class="btn-qr" title="کیو آر کوڈ"><i class="fas fa-qrcode"></i></button>
-                                </td>
-                            </tr>
-                             <tr>
-                                <td><img src="https://via.placeholder.com/40" alt="student photo" class="student-photo"></td>
-                                <td>104</td>
-                                <td class="student-name">عائشہ صدیقہ</td>
-                                <td>طارق جمیل</td>
-                                <td>کلاس نہم</td>
-                                <td>C</td>
-                                <td><span class="status active">فعال</span></td>
-                                <td class="action-buttons">
-                                    <button class="btn-view"><i class="fas fa-eye"></i></button>
-                                    <button class="btn-edit"><i class="fas fa-pencil-alt"></i></button>
-                                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
-                                    <button class="btn-qr" title="کیو آر کوڈ"><i class="fas fa-qrcode"></i></button>
-                                </td>
-                            </tr>
+                        <tbody id="student-table-body">
+                            <!-- Student rows will be injected here by JavaScript -->
                         </tbody>
                     </table>
-
-                    <div class="table-footer">
-                        <div class="pagination">
-                            <a href="#" class="active">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <span>...</span>
-                            <a href="#">10</a>
-                        </div>
-                        <div class="table-info">صفحہ 1 از 10 (کل 98 طلبہ)</div>
-                    </div>
                 </div>
             </section>
         </main>
     </div>
+    <script src="../js/student_listing.js"></script>
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوری - لائبریری</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/library.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-lightbulb"></i> نوری</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-tachometer-alt"></i> <span>ڈیش بورڈ</span></a></li>
+                    <li><a href="student_listing.html"><i class="fas fa-user-graduate"></i> <span>طلبہ</span></a></li>
+                    <li><a href="attendance.html"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
+                    <li><a href="fees.html"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
+                    <li><a href="exams.html"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
+                    <li><a href="timetable.html"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
+                    <li class="active"><a href="library.html"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
+                    <li><a href="transport.html"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>لائبریری مینجمنٹ</h1>
+                </div>
+                <div class="header-user">
+                    <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="manage">کتابوں کا انتظام</button>
+                        <button class="tab-btn" data-tab="issue">اجراء/واپسی</button>
+                        <button class="tab-btn" data-tab="history">ہسٹری</button>
+                    </div>
+                    <div class="tab-content">
+                        <!-- Manage Books Tab -->
+                        <div id="manage" class="tab-pane active">
+                            <h3>نئی کتاب شامل کریں</h3>
+                            <div class="form-container">
+                                <input type="hidden" id="book-id">
+                                <input type="text" id="book-title" placeholder="کتاب کا عنوان" required>
+                                <input type="text" id="book-author" placeholder="مصنف" required>
+                                <input type="text" id="book-isbn" placeholder="ISBN" required>
+                                <input type="number" id="book-quantity" placeholder="تعداد" required>
+                                <button id="save-book-btn">کتاب محفوظ کریں</button>
+                            </div>
+                            <div id="book-list-container"></div>
+                        </div>
+
+                        <!-- Issue/Return Tab -->
+                        <div id="issue" class="tab-pane">
+                           <h3>کتابیں جاری/واپس کریں</h3>
+                           <div id="issue-return-list"></div>
+                        </div>
+
+                        <!-- History Tab -->
+                        <div id="history" class="tab-pane">
+                           <h3>طالب علم کی ہسٹری دیکھیں</h3>
+                           <div class="history-controls">
+                               <select id="student-select-history"><option value="">طالب علم منتخب کریں</option></select>
+                               <button id="load-history-btn">ہسٹری لوڈ کریں</button>
+                           </div>
+                           <div id="student-history-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../js/library.js"></script>
+</body>
+</html>

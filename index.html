@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نوری - ڈیش بورڈ</title>
+    <title>نوری - اسکول مینجمنٹ سوفٹ ویئر</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
@@ -18,18 +18,14 @@
                 <ul>
                     <li class="active"><a href="index.html"><i class="fas fa-tachometer-alt"></i> <span>ڈیش بورڈ</span></a></li>
                     <li><a href="pages/student_listing.html"><i class="fas fa-user-graduate"></i> <span>طلبہ</span></a></li>
-                    <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> <span>اساتذہ</span></a></li>
-                    <li><a href="#"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
-                    <li><a href="#"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
-                    <li><a href="#"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
-                    <li><a href="#"><i class="fas fa-poll"></i> <span>نتائج</span></a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
-                    <li><a href="#"><i class="fas fa-tasks"></i> <span>ہوم ورک</span></a></li>
-                    <li><a href="#"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
-                    <li><a href="#"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
-                    <li><a href="#"><i class="fas fa-bullhorn"></i> <span>مواصلات</span></a></li>
-                    <li><a href="#"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
+                    <li><a href="pages/attendance.html"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
+                    <li><a href="pages/fees.html"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
+                    <li><a href="pages/exams.html"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
+                    <li><a href="pages/timetable.html"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
+                    <li><a href="pages/library.html"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
+                    <li><a href="pages/transport.html"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
+                    <li><a href="pages/reports.html"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
+                    <li><a href="pages/settings.html"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
                 </ul>
             </nav>
         </aside>
@@ -39,117 +35,70 @@
             <!-- Header -->
             <header class="header">
                 <div class="header-title">
-                    <h1>مرکزی ڈیش بورڈ</h1>
-                    <p>خوش آمدید، <strong>سپر ایڈمن</strong>! آپ کے سکول کا مکمل جائزہ یہاں ہے۔</p>
+                    <h1>ڈیش بورڈ</h1>
                 </div>
                 <div class="header-user">
-                    <button class="header-icon-btn"><i class="fas fa-bell"></i><span class="notification-badge">3</span></button>
-                    <button class="header-icon-btn"><i class="fas fa-envelope"></i></button>
-                    <div class="user-profile">
-                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="user-avatar">
-                    </div>
+                    <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
                 </div>
             </header>
 
             <!-- Content Area -->
             <section class="content-area">
-                <div class="stats-cards">
-                    <div class="card students">
-                        <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
-                        <div class="card-info">
-                            <p>1,250</p><h3>کل طلبہ</h3>
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon students">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p>کل طلبہ</p>
+                            <h3 id="total-students">٠</h3>
                         </div>
                     </div>
-                    <div class="card teachers">
-                        <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <div class="card-info">
-                            <p>75</p><h3>کل اساتذہ</h3>
+                    <div class="stat-card">
+                        <div class="stat-icon teachers">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p>کل اساتذہ</p>
+                            <h3>١٥</h3>
                         </div>
                     </div>
-                    <div class="card attendance">
-                        <div class="card-icon"><i class="fas fa-user-check"></i></div>
-                        <div class="card-info">
-                            <p>95.8%</p><h3>آج کی حاضری</h3>
+                    <div class="stat-card">
+                        <div class="stat-icon earnings">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p>کل آمدنی</p>
+                            <h3 id="total-revenue">٠</h3>
                         </div>
                     </div>
-                    <div class="card income">
-                        <div class="card-icon"><i class="fas fa-wallet"></i></div>
-                        <div class="card-info">
-                           <p>PKR 5.5M</p><h3>ماہانہ آمدن</h3>
+                    <div class="stat-card">
+                        <div class="stat-icon events">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p>آنے والے واقعات</p>
+                            <h3>٣</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="widgets-grid">
-                    <div class="widget large-widget">
-                        <h3 class="widget-title">اسکول کی کارکردگی کا جائزہ</h3>
-                        <canvas id="performanceChart"></canvas>
+                <!-- Charts and Summaries -->
+                <div class="main-charts">
+                    <div class="chart-container">
+                        <h4>آمدنی کا جائزہ</h4>
+                        <canvas id="revenueChart"></canvas>
                     </div>
-
-                    <div class="widget medium-widget">
-                        <h3 class="widget-title">فوری کاروائیاں</h3>
-                        <div class="quick-actions">
-                            <a href="pages/add_student.html" class="action-btn student">
-                                <i class="fas fa-user-plus"></i>
-                                <span>نیا طالب علم</span>
-                            </a>
-                            <a href="#" class="action-btn fees">
-                                <i class="fas fa-receipt"></i>
-                                <span>فیس وصولی</span>
-                            </a>
-                             <a href="#" class="action-btn teacher">
-                                <i class="fas fa-user-tie"></i>
-                                <span>نیا استاد</span>
-                            </a>
-                            <a href="#" class="action-btn exam">
-                                <i class="fas fa-file-alt"></i>
-                                <span>نتیجہ بنائیں</span>
-                            </a>
-                             <a href="#" class="action-btn notice">
-                                <i class="fas fa-bullhorn"></i>
-                                <span>نوٹس بھیجیں</span>
-                            </a>
-                             <a href="#" class="action-btn reports">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>رپورٹ بنائیں</span>
-                            </a>
-                        </div>
+                    <div class="chart-container">
+                        <h4>طلبہ کی حاضری</h4>
+                        <canvas id="attendanceChart"></canvas>
                     </div>
-
-                     <div class="widget medium-widget">
-                        <h3 class="widget-title">آج کی غیر حاضری</h3>
-                        <ul class="absent-list">
-                           <li>
-                                <img src="https://via.placeholder.com/40" class="student-photo"/>
-                                <span><strong>احمد خان</strong> (کلاس دہم-A)</span> 
-                                <button class="btn-sm-notify">والدین کو اطلاع دیں</button>
-                           </li>
-                            <li>
-                                <img src="https://via.placeholder.com/40" class="student-photo"/>
-                                <span><strong>ثنا جاوید</strong> (کلاس نہم-B)</span> 
-                                <button class="btn-sm-notify">والدین کو اطلاع دیں</button>
-                           </li>
-                            <li>
-                                <img src="https://via.placeholder.com/40" class="student-photo"/>
-                                <span><strong>بلال اسلم</strong> (استاد)</span> 
-                                <button class="btn-sm-notify disabled">اطلاع بھیجی گئی</button>
-                           </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="widget long-widget">
-                        <h3 class="widget-title">نوٹس بورڈ</h3>
-                        <ul class="notice-board-list">
-                            <li><span class="notice-date">15 جون</span> <p>کل بروز ہفتہ کھیلوں کے مقابلے منعقد ہوں گے۔</p></li>
-                            <li><span class="notice-date">12 جون</span> <p>والدین-اساتذہ میٹنگ 20 جون کو ہوگی۔</p></li>
-                            <li><span class="notice-date">10 جون</span> <p>تمام طلبہ کو مطلع کیا جاتا ہے کہ فیس جمع کروانے کی آخری تاریخ 15 جون ہے۔</p></li>
-                        </ul>
-                    </div>
-
                 </div>
             </section>
         </main>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/dashboard.js"></script>
 </body>

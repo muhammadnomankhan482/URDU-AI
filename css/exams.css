@@ -1,0 +1,90 @@
+/* Exams Page Specific Styles */
+
+.tabs-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 25px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #888;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-btn.active {
+    color: #5DADE2;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #5DADE2;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.form-container, .form-container-grid {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.form-container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.form-container input, .form-container-grid input, .form-container-grid select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.form-container button, .form-container-grid button {
+    padding: 12px 25px;
+    background-color: #5DADE2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-container-grid button {
+    grid-column: 1 / -1; /* Span full width on a new line */
+    width: auto;
+    justify-self: start;
+}
+
+#exam-list, #date-sheet-display {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}

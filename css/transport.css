@@ -1,0 +1,185 @@
+/* Transport Management Styles */
+
+.tabs-container {
+    width: 100%;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: bold;
+    color: #888;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tab-btn.active {
+    color: #5DADE2;
+    border-bottom-color: #5DADE2;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Form and List Styles */
+.form-container, .assignment-controls, .fees-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.form-container input, .assignment-controls select, .fees-controls select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+#save-route-btn, #save-assignment-btn, #load-fee-status-btn, #save-fee-status-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #5DADE2;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Route List */
+#route-list, #student-assignment-list, #fee-status-table {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.route-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.route-item:last-child {
+    border-bottom: none;
+}
+
+.route-details span {
+    margin-left: 15px;
+}
+
+.route-actions button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Assignment List & Fee Status Table */
+.student-assignment-item, .fee-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.student-assignment-item:last-child, .fee-status-row:last-child {
+    border-bottom: none;
+}
+
+.student-info {
+    flex-grow: 1;
+}
+
+.fee-status-row .student-name {
+     width: 40%;
+}
+
+.fee-status-row .route-fee {
+    width: 20%;
+}
+
+.fee-status-row .status-toggle {
+    width: 30%;
+}
+
+#save-assignment-btn, #save-fee-status-btn {
+    display: block;
+    margin-top: 20px;
+    width: fit-content;
+}
+
+/* Checkbox Toggle */
+.assign-switch, .paid-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.assign-switch input, .paid-switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2ECC71;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}

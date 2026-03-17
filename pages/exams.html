@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوری - امتحانات کا نظام</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/exams.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-lightbulb"></i> نوری</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-tachometer-alt"></i> <span>ڈیش بورڈ</span></a></li>
+                    <li><a href="student_listing.html"><i class="fas fa-user-graduate"></i> <span>طلبہ</span></a></li>
+                    <li><a href="attendance.html"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
+                    <li><a href="fees.html"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
+                    <li class="active"><a href="exams.html"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
+                    <li><a href="timetable.html"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
+                    <li><a href="library.html"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
+                    <li><a href="transport.html"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-title">
+                    <h1>امتحانات کا نظام</h1>
+                </div>
+                <div class="header-user">
+                     <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <section class="content-area">
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="create-exam">امتحان بنائیں</button>
+                        <button class="tab-btn" data-tab="date-sheet">ڈیٹ شیٹ</button>
+                        <button class="tab-btn" data-tab="marks-entry">نمبر درج کریں</button>
+                    </div>
+                    <div class="tab-content">
+                        <!-- Create Exam Tab -->
+                        <div id="create-exam" class="tab-pane active">
+                            <h3>نیا امتحان بنائیں</h3>
+                            <div class="form-container">
+                                <input type="text" id="exam-name" placeholder="امتحان کا نام (مثلاً وسط مدتی امتحانات)">
+                                <input type="date" id="start-date">
+                                <button id="save-exam-btn">امتحان محفوظ کریں</button>
+                            </div>
+                            <div id="exam-list"></div>
+                        </div>
+
+                        <!-- Date Sheet Tab -->
+                        <div id="date-sheet" class="tab-pane">
+                            <h3>ڈیٹ شیٹ بنائیں</h3>
+                            <div class="form-container-grid">
+                                <select id="exam-select-ds"><option value="">امتحان منتخب کریں</option></select>
+                                <select id="class-select-ds"><option value="">کلاس منتخب کریں</option></select>
+                                <input type="text" id="subject-name" placeholder="مضمون کا نام">
+                                <input type="date" id="paper-date">
+                                <input type="time" id="paper-time">
+                                <button id="add-paper-btn">پرچہ شامل کریں</button>
+                            </div>
+                            <div id="date-sheet-display"></div>
+                        </div>
+
+                        <!-- Marks Entry Tab -->
+                        <div id="marks-entry" class="tab-pane">
+                           <h3>طلبہ کے نمبر درج کریں</h3>
+                           <div class="form-container-grid">
+                                <select id="exam-select-me"><option value="">امتحان منتخب کریں</option></select>
+                                <select id="class-select-me"><option value="">کلاس منتخب کریں</option></select>
+                                <select id="subject-select-me"><option value="">مضمون منتخب کریں</option></select>
+                                <button id="load-students-btn">طلبہ لوڈ کریں</button>
+                           </div>
+                           <div id="marks-entry-table-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../js/exams.js"></script>
+</body>
+</html>

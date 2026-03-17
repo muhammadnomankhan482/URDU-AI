@@ -1,0 +1,61 @@
+.settings-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.settings-container h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#save-settings-btn {
+    grid-column: 1 / -1; /* Span across all columns */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #4CAF50;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    justify-self: start; /* Align to the start of the grid cell */
+}
+
+#save-settings-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+}

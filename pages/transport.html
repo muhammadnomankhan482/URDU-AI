@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوری - ٹرانسپورٹ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/transport.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-lightbulb"></i> نوری</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-tachometer-alt"></i> <span>ڈیش بورڈ</span></a></li>
+                    <li><a href="student_listing.html"><i class="fas fa-user-graduate"></i> <span>طلبہ</span></a></li>
+                    <li><a href="attendance.html"><i class="fas fa-calendar-check"></i> <span>حاضری</span></a></li>
+                    <li><a href="fees.html"><i class="fas fa-money-bill-wave"></i> <span>فیس</span></a></li>
+                    <li><a href="exams.html"><i class="fas fa-book"></i> <span>امتحانات</span></a></li>
+                    <li><a href="timetable.html"><i class="fas fa-clock"></i> <span>ٹائم ٹیبل</span></a></li>
+                    <li><a href="library.html"><i class="fas fa-book-open-reader"></i> <span>لائبریری</span></a></li>
+                    <li class="active"><a href="transport.html"><i class="fas fa-bus"></i> <span>ٹرانسپورٹ</span></a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> <span>رپورٹس</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>ترتیبات</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>ٹرانسپورٹ مینجمنٹ</h1>
+                </div>
+                <div class="header-user">
+                    <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
+                </div>
+            </header>
+
+            <section class="content-area">
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="routes">روٹ مینجمنٹ</button>
+                        <button class="tab-btn" data-tab="assign">طلبہ کی تفویض</button>
+                        <button class="tab-btn" data-tab="fees">فیس کا انتظام</button>
+                    </div>
+                    <div class="tab-content">
+                        <!-- Routes Tab -->
+                        <div id="routes" class="tab-pane active">
+                            <h3>نیا روٹ شامل کریں</h3>
+                            <div class="form-container">
+                                <input type="hidden" id="route-id">
+                                <input type="text" id="route-name" placeholder="روٹ کا نام" required>
+                                <input type="text" id="driver-name" placeholder="ڈرائیور کا نام" required>
+                                <input type="number" id="route-fees" placeholder="فیس" required>
+                                <button id="save-route-btn">روٹ محفوظ کریں</button>
+                            </div>
+                            <div id="route-list"></div>
+                        </div>
+
+                        <!-- Student Assignment Tab -->
+                        <div id="assign" class="tab-pane">
+                           <h3>روٹ کے لیے طلبہ تفویض کریں</h3>
+                           <div class="assignment-controls">
+                               <select id="route-select-assign"><option value="">روٹ منتخب کریں</option></select>
+                               <select id="class-select-assign"><option value="">کلاس منتخب کریں</option></select>
+                           </div>
+                           <div id="student-assignment-list"></div>
+                           <button id="save-assignment-btn">تفویض محفوظ کریں</button>
+                        </div>
+
+                        <!-- Fees Tab -->
+                        <div id="fees" class="tab-pane">
+                           <h3>ٹرانسپورٹ فیس کا اسٹیٹس</h3>
+                           <div class="fees-controls">
+                               <select id="route-select-fees"><option value="">روٹ منتخب کریں</option></select>
+                               <select id="month-select-fees"><option value="">مہینہ منتخب کریں</option></select>
+                               <button id="load-fee-status-btn">فیس اسٹیٹس لوڈ کریں</button>
+                           </div>
+                           <div id="fee-status-list"></div>
+                           <button id="save-fee-status-btn">فیس اسٹیٹس محفوظ کریں</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../js/transport.js"></script>
+</body>
+</html>
